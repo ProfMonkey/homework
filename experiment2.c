@@ -28,10 +28,21 @@ int main()
     printf("22. %d\n", 'g' - 'a' + 1);
     printf("23. %d\n", 'G' - 'A' + 1);
 
-    double f;
-    printf("\n请输入华氏温度：");
-    scanf("%lf", &f);
-    printf("摄氏温度：%.1f\n", (5.0 / 9.0) * (f - 32));
+    int choice;
+    double temperature;
+    printf("\n1. 摄氏温度转华氏温度\n");
+    printf("2. 华氏温度转摄氏温度\n");
+    printf("请选择：");
+    scanf("%d", &choice);
+    printf("请输入温度：");
+    scanf("%lf", &temperature);
+
+    if (choice == 1)
+        printf("华氏温度：%.1f\n", temperature * 9.0 / 5.0 + 32);
+    else if (choice == 2)
+        printf("摄氏温度：%.1f\n", (temperature - 32) * 5.0 / 9.0);
+    else
+        printf("选择错误\n");
 
     return 0;
 }
